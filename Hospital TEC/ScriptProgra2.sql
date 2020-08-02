@@ -159,9 +159,9 @@ Insert into AttentionCenter (CName, CLocation, MaxCapacity, CType) values ('De F
 select * from AttentionCenter
 
 --Table PublicEmployee
-Insert into PublicEmployee (Name1, Name2, LastName1, LastName2, Area, EType, EntryDate, CenterID) values ('Maria','Celeste','Salinas','Medina','Ginecología','Doctor','01-06-2001',2);
-Insert into PublicEmployee (Name1, Name2, LastName1, LastName2, Area, EType, EntryDate, CenterID) values ('Marco','','López','','Emergencias','Enfermero','2003-08-22',3);
-Insert into PublicEmployee (Name1, Name2, LastName1, LastName2, Area, EType, EntryDate, CenterID) values ('Emerson','Felipe','Souza','Ribeiro','Oncología','Doctor','2001-05-03',1);
+Insert into PublicEmployee (EmployeeID,Name1, Name2, LastName1, LastName2, Area, EType, EntryDate, CenterID) values (901220797,'Maria','Celeste','Salinas','Medina','Ginecología','Doctor','01-06-2001',2);
+Insert into PublicEmployee (EmployeeID,Name1, Name2, LastName1, LastName2, Area, EType, EntryDate, CenterID) values (123456789,'Marco','','López','','Emergencias','Enfermero','2003-08-22',3);
+Insert into PublicEmployee (EmployeeID,Name1, Name2, LastName1, LastName2, Area, EType, EntryDate, CenterID) values (987654321,'Emerson','Felipe','Souza','Ribeiro','Oncología','Doctor','2001-05-03',1);
 select * from PublicEmployee
 
 --Table Patients
