@@ -11,7 +11,7 @@ Create Table AttentionCenter(
 
 --Public Employee Table with all its attributes
 Create Table PublicEmployee(
-	EmployeeID 	SERIAL PRIMARY KEY,
+	EmployeeID INTEGER PRIMARY KEY,
 	Name1 VARCHAR (10) NOT NULL,
 	Name2 VARCHAR (10) NULL,
 	LastName1 VARCHAR (15) NOT NULL,
@@ -25,7 +25,7 @@ Create Table PublicEmployee(
 
 --Patients Table with all its attributes
 Create Table Patients(
-	PatientID SERIAL PRIMARY KEY,
+	PatientID INTEGER PRIMARY KEY,
 	Name1 VARCHAR (10) NOT NULL,
 	Name2 VARCHAR (10) NULL,
 	LastName1 VARCHAR (15) NOT NULL,
