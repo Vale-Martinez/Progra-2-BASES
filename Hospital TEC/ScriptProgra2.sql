@@ -30,7 +30,7 @@ Create Table Patients(
 	Name2 VARCHAR (10) NULL,
 	LastName1 VARCHAR (15) NOT NULL,
 	LastName2 VARCHAR (15) NULL,
-	BloodType VARCHAR (3) NOT NULL CHECK (BloodType in ('A+','A-','B+','B-','O+','O-','AB+','AB-'))
+	BloodType VARCHAR (3) NOT NULL CHECK (BloodType in ('A+','A-','B+','B-','O+','O-','AB+','AB-')),
 	BirthDate DATE NULL,
 	Nationality VARCHAR (25) NULL,
 	Province VARCHAR (20) NULL,
