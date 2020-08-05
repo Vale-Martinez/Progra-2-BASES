@@ -153,7 +153,7 @@ Create Table Diagnosis_Treatment (
 --DATA INSERTION
 
 --Table AttentionCenter
-Insert into AttentionCenter (CName, CLocation, MaxCapacity, CType) values ('Jerusalen','Alto de Guadalupe', 100,'Clínica');
+Insert into AttentionCenter (CName, CLocation, MaxCapacity, CType) values ('Jerusalen','Alto de Guadalupe', 100,'Clinica');
 Insert into AttentionCenter (CName, CLocation, MaxCapacity, CType) values ('Calderón Guardia','San José', 200,'Hospital');
 Insert into AttentionCenter (CName, CLocation, MaxCapacity, CType) values ('De Fatima','Goicoechea', 50,'EBAIS')
 select * from AttentionCenter
@@ -165,15 +165,15 @@ Insert into PublicEmployee (EmployeeID,Name1, Name2, LastName1, LastName2, Area,
 select * from PublicEmployee
 
 --Table Patients
-Insert into Patients (Name1, Name2, LastName1, LastName2, BloodType, BirthDate, Nationality, Province, Canton, District, Signals, CenterID) values ('José','Alejandro','Campos','Torres','AB+','06-16-2009','Costarricense','Alajuela','Atenas','San Isidro', 'Casa Amarilla', 1);
-Insert into Patients (Name1, Name2, LastName1, LastName2, BloodType, BirthDate, Nationality, Province, Canton, District, Signals, CenterID) values ('Clara','','Rojas','Treminio','O-','02-15-2003','Costarricense','Heredia','Barva','San Pedro', 'Residencial', 2);
-Insert into Patients (Name1, Name2, LastName1, LastName2, BloodType, BirthDate, Nationality, Province, Canton, District, Signals, CenterID) values ('Alex','Andrés','Tijerino','','B+','03-27-2000','Costarricense','Puntarenas','Puntarenas','Acapulco', '', 2);
+Insert into Patients (PatientID, Name1, Name2, LastName1, LastName2, BloodType, BirthDate, Nationality, Province, Canton, District, Signals, CenterID) values (123, 'José','Alejandro','Campos','Torres','AB+','06-16-2009','Costarricense','Alajuela','Atenas','San Isidro', 'Casa Amarilla', 1);
+Insert into Patients (PatientID, Name1, Name2, LastName1, LastName2, BloodType, BirthDate, Nationality, Province, Canton, District, Signals, CenterID) values (456, 'Clara','','Rojas','Treminio','O-','02-15-2003','Costarricense','Heredia','Barva','San Pedro', 'Residencial', 2);
+Insert into Patients (PatientID, Name1, Name2, LastName1, LastName2, BloodType, BirthDate, Nationality, Province, Canton, District, Signals, CenterID) values (789, 'Alex','Andrés','Tijerino','','B+','03-27-2000','Costarricense','Puntarenas','Puntarenas','Acapulco', '', 2);
 select * from Patients
 
 --Table Appointments
-Insert into Appointments (AppointmentID, ATime, ADate, Observation, Area, PatientID) values ('A001','1:00 pm','02-02-2020','','Ginecología', 2);
-Insert into Appointments (AppointmentID, ATime, ADate, Observation, Area, PatientID) values ('A002','5:00 pm','03-11-2019','','Oncología', 1);
-Insert into Appointments (AppointmentID, ATime, ADate, Observation, Area, PatientID) values ('A003','8:00 am','06-09-2018','Dolor estomacal','Emergencias', 3);
+Insert into Appointments (AppointmentID, AState,  ATime, ADate, Observation, Area, PatientID) values ('A001', 'Registrada', '1:00 pm','02-02-2020','','Ginecología', 123);
+Insert into Appointments (AppointmentID, AState, ATime, ADate, Observation, Area, PatientID) values ('A002', 'Registrada', '5:00 pm','03-11-2019','','Oncología', 456);
+Insert into Appointments (AppointmentID, AState, ATime, ADate, Observation, Area, PatientID) values ('A003', 'Registrada', '8:00 am','06-09-2018','Dolor estomacal','Emergencias', 789);
 select * from Appointments
 
 --Table Diagnosis
@@ -189,27 +189,27 @@ Insert into Treatment (TreatmentID, TName, Dose) values ('T003','Medicamento','U
 select * from Treatment
 
 --Table Hospitalization
-Insert into Hospitalization (HospitalizationID, Name1, Name2, LastName1, LastName2, StartDate, EndDate, Speciality, CenterID, DiagnosisID, PatientID, EmployeeID) values ('H001','José','Alejandro','Campos','Torres','06-09-2018','06-15-2019','General',3,'D003',1,2);
-Insert into Hospitalization (HospitalizationID, Name1, Name2, LastName1, LastName2, StartDate, EndDate, Speciality, CenterID, DiagnosisID, PatientID, EmployeeID) values ('H002','Clara','','Rojas','Treminio','02-02-2020','02-10-2020','Infecciones',2,'D001',2,1);
+Insert into Hospitalization (HospitalizationID, Name1, Name2, LastName1, LastName2, StartDate, EndDate, Speciality, CenterID, DiagnosisID, PatientID, EmployeeID) values ('H001','José','Alejandro','Campos','Torres','06-09-2018','06-15-2019','General',3,'D003',123,123456789);
+Insert into Hospitalization (HospitalizationID, Name1, Name2, LastName1, LastName2, StartDate, EndDate, Speciality, CenterID, DiagnosisID, PatientID, EmployeeID) values ('H002','Clara','','Rojas','Treminio','02-02-2020','02-10-2020','Infecciones',2,'D001', 456,901220797);
 select * from Hospitalization
 
 --Table Hospitalization_Registry
-Insert into Hospitalization_Registry (Observation, RegistryDate, HospitalizationID, TreatmentID, EmployeeID) values ('Paciente debe estar internado durante 7 días','06-09-2020','H001','T003',2);
-Insert into Hospitalization_Registry (Observation, RegistryDate, HospitalizationID, TreatmentID, EmployeeID) values ('Paciente debe estar internado durante 9 días','02-02-2020','H002','T001',1);
+Insert into Hospitalization_Registry (Observation, RegistryDate, HospitalizationID, TreatmentID, EmployeeID) values ('Paciente debe estar internado durante 7 días','06-09-2020','H001','T003',123456789);
+Insert into Hospitalization_Registry (Observation, RegistryDate, HospitalizationID, TreatmentID, EmployeeID) values ('Paciente debe estar internado durante 9 días','02-02-2020','H002','T001',901220797);
 select * from Hospitalization_Registry
 
 --Table Employee_Patient
-Insert into Employee_Patient (PatientID, EmployeeID) values (1, 3);
-Insert into Employee_Patient (PatientID, EmployeeID) values (2, 1);
-Insert into Employee_Patient (PatientID, EmployeeID) values (3, 2);
+Insert into Employee_Patient (PatientID, EmployeeID) values (123, 987654321);
+Insert into Employee_Patient (PatientID, EmployeeID) values (456, 901220797);
+Insert into Employee_Patient (PatientID, EmployeeID) values (789, 123456789);
 select * from Employee_Patient
 
 --Table Patients_Phones
-Insert into Patients_Phones (PatientID, Phones) values (1, 85639562);
-Insert into Patients_Phones (PatientID, Phones) values (1, 22569874);
-Insert into Patients_Phones (PatientID, Phones) values (2, 22336655);
-Insert into Patients_Phones (PatientID, Phones) values (2, 21487935);
-Insert into Patients_Phones (PatientID, Phones) values (3, 89562314);
+Insert into Patients_Phones (PatientID, Phones) values (123, 85639562);
+Insert into Patients_Phones (PatientID, Phones) values (123, 22569874);
+Insert into Patients_Phones (PatientID, Phones) values (456, 22336655);
+Insert into Patients_Phones (PatientID, Phones) values (456, 21487935);
+Insert into Patients_Phones (PatientID, Phones) values (789, 89562314);
 select * from Patients_Phones
 
 --Table Patients_Diagnosis
@@ -225,9 +225,9 @@ Insert into Appointments_Diagnosis (AppointmentID, DiagnosisID) values ('A003', 
 select * from Appointments_Diagnosis
 
 --Table Employee_Appointments
-Insert into Employee_Appointments (AppointmentID, EmployeeID) values ('A001', 1);
-Insert into Employee_Appointments (AppointmentID, EmployeeID) values ('A002', 3);
-Insert into Employee_Appointments (AppointmentID, EmployeeID) values ('A003', 2);
+Insert into Employee_Appointments (AppointmentID, EmployeeID) values ('A001', 901220797);
+Insert into Employee_Appointments (AppointmentID, EmployeeID) values ('A002', 987654321);
+Insert into Employee_Appointments (AppointmentID, EmployeeID) values ('A003', 123456789);
 select * from Employee_Appointments
 
 --Table Diagnosis_Treatment
