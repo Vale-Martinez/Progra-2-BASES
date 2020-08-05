@@ -17,7 +17,7 @@ Create Table PublicEmployee(
 	LastName1 VARCHAR (15) NOT NULL,
 	LastName2 Varchar (15) NULL,
 	Area VARCHAR (20) NOT NULL,
-	EType VARCHAR (9) NOT NULL CHECK (EType in ('Doctor','Secretario', 'Enfermero'))
+	EType VARCHAR (9) NOT NULL CHECK (EType in ('Doctor','Secretario', 'Enfermero')),
 	EntryDate DATE NOT NULL,
 	CenterID INTEGER NOT NULL,
 	FOREIGN KEY (CenterID) REFERENCES AttentionCenter (CenterID) ON DELETE CASCADE ON UPDATE CASCADE
