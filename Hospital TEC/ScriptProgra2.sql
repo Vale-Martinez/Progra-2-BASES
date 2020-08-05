@@ -44,7 +44,7 @@ Create Table Patients(
 --Appointment Table with all its attributes
 Create Table Appointments(
 	AppointmentID VARCHAR (10) PRIMARY KEY,
-	AState VARCHAR (25) NOT NULL CHECK (AState in ('Registrada', 'Cancelada por paciente','Cancelada por medico','Asignada','Realizada'))
+	AState VARCHAR (25) NOT NULL CHECK (AState in ('Registrada', 'Cancelada por paciente','Cancelada por medico','Asignada','Realizada')),
 	ATime TIME NOT NULL,
 	ADate DATE NOT NULL,
 	Observation VARCHAR (50) NULL,
@@ -57,7 +57,7 @@ Create Table Appointments(
 Create Table Diagnosis(
 	DiagnosisID VARCHAR (10) PRIMARY KEY,
 	DName VARCHAR (30) NOT NULL,
-	DLevel VARCHAR (9) NOT NULL CHECK (DLevel in ('Leve','Grave','Muy grave'))
+	DLevel VARCHAR (9) NOT NULL CHECK (DLevel in ('Leve','Grave','Muy grave')),
 	Observation VARCHAR (50) NULL
 )
 
