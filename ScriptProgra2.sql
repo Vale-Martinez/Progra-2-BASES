@@ -1,6 +1,7 @@
 --CREATING TABLES
 
 --Attention Center Table with all its attributes
+
 Create Table AttentionCenter(
 	CenterID SERIAL PRIMARY KEY,
 	CName VARCHAR(30) NOT NULL,
